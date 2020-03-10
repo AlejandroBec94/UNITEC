@@ -73,11 +73,11 @@
                     <div class="input-field col s8 m8">
                         <select class="icons pull-right" style="">
 
-                            <option value="" disabled selected>Choose your Gender</option>
+                            <option value="" disabled selected>Grado de Interes</option>
 
                             @foreach($CatalogInformation as $Information)
 
-                                @if($Information->type == 1)
+                                @if($Information->type == 3)
                                     <option value="" class="left">{{ $Information->description }}
                                     </option>
                                 @endif
