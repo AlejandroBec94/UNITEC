@@ -13,10 +13,7 @@
 
 Route::get('/', 'RegisterController@index');
 
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/signup', 'RegisterController@createUser')->name('signup');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
