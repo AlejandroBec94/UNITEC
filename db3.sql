@@ -55,17 +55,21 @@ create index password_resets_email_index
     on password_resets (email);
 
 
-create table student
+create table users
 (
     id            bigint unsigned auto_increment
         primary key,
-    name          varchar(255) not null,
-    last_name_dad varchar(255) not null,
-    last_name_mom varchar(255) not null,
-    email         varchar(255) not null,
-    password      varchar(255) not null,
-    age           int          not null,
-    active        tinyint(1)   not null
+    name          varchar(255)                     not null,
+    last_name_dad varchar(255) default 'undefined' null,
+    last_name_mom varchar(255) default 'undefined' null,
+    email         varchar(255)                     not null,
+    password      varchar(255)                     not null,
+    age           int          default 0           not null,
+    active        tinyint(1)   default 1           null,
+    updated_at    datetime                         null,
+    created_at    datetime                         null,
+    civil_state   varchar(50)                      null
 )
     collate = utf8mb4_unicode_ci;
 
+INSERT INTO unitec.users (id, name, last_name_dad, last_name_mom, email, password, age, active, updated_at, created_at, civil_state) VALUES (13, 'Alejandro', 'Becerra', 'cvbncv', 'a.becor94@gmail.com', '$2y$10$3qYS2Bh70HDWFFQ1gTV/MuJTW/gJDjqccNBq7BFdm9XcCg/y4zcVG', 2, 1, '2020-03-11 20:24:13', '2020-03-11 20:24:13', '3');
